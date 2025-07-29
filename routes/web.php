@@ -18,3 +18,7 @@ Route::get('/', 'PrincipalController@principal');
 Route::get('/sobre-nos', 'SobreNosController@sobreNos');
 
 Route::get('/contato', 'ContatoController@contato');
+
+Route::get('/contato/{nome}/{idade}/{profissao?}', function(string $nome, int $idade, string $profissao = 'profissão não informada') {
+    echo "Meu nome é $nome, tenho $idade anos e trabalho como $profissao";
+})->where('nome', '[A-Za-z]+')->where('idade', '[1-99]+');
