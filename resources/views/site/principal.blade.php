@@ -11,3 +11,13 @@
         <a href="{{route('site.contato')}}">contato</a>
     </li>
 </ul>
+
+@isset($fornecedores)
+    <h1>O cpf do fornecedor {{$fornecedores[0]['Wurth']}} é 
+        @isset($fornecedores[0]['CPF'])
+        {{$fornecedores[0]['CPF']}}
+        @endisset
+@endisset
+
+
+
